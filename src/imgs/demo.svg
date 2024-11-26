@@ -323,7 +323,7 @@
 
   <foreignObject width="100%" height="100%">
         <div xmlns="http://www.w3.org/1999/xhtml">
-
+          <input type="checkbox" />
   <style>
     #pixelMe{
       width:100%;
@@ -365,6 +365,7 @@
     var element = document.getElementById("pixelMe");
     element.classList.toggle("pixelOff");
   }
+    console.log('Hello world')
   </script>
         </div>
     </foreignObject>
