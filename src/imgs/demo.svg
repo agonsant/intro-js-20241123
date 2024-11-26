@@ -331,7 +331,7 @@
       height: 50px;
       position: absolute;
       bottom: 50px;
-      border-color: red;
+      outline: 2px solid red
       left: 150px;
     }
     #pixelMe:has(.toggle:checked) #pixels {
@@ -356,32 +356,30 @@
     #pixelMe #pixels{
       transition: all 0.3s ease-in-out;
     }
-    #pixelMe.pixelOff #pixels{
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s ease-in-out;
-    }
+    
     rect.toggle-handler, rect.toggle-track{
       transition: all 0.2s ease-in-out;
     }
     rect.toggle-handler:hover{
       cursor: pointer;
     }
-    #pixelMe.pixelOff rect.toggle-handler{
+
+    #pixelMe:has(.toggle:checked) #pixels,
+    #pixelMe.pixelOff #pixels{
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    #pixelMe.pixelOff rect.toggle-handler,
+    #pixelMe:has(.toggle:checked) rect.toggle-handler{
       x: 280;
     }
-    #pixelMe.pixelOff rect.toggle-track{
+    #pixelMe.pixelOff rect.toggle-track,
+    #pixelMe:has(.toggle:checked) rect.toggle-track {
       fill: #606060;
     }
   </style>
-
-  <script>
-  function changeClass(){
-    var element = document.getElementById("pixelMe");
-    element.classList.toggle("pixelOff");
-  }
-    console.log('Hello world')
-  </script>
         </div>
     </foreignObject>
 
